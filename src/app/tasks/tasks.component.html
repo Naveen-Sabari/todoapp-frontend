@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="handleSubmit()" class="max-w-lg mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg mt-12">
+  <input
+    type="text"
+    name="name"
+    placeholder="Enter your task name"
+    class="text-white p-4 rounded-md font-semibold bg-transparent border-2 border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300 w-full mb-4 placeholder-white"
+    [(ngModel)]="name"
+    name="name"
+    (ngModelChange)="handleChange()"
+    autofocus
+  />
+
+
+
+  <textarea
+  rows="3"
+  name="desc"
+  placeholder="Enter your task description"
+  class="p-4 rounded-md font-semibold bg-transparent text-white border-2 border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300 w-full mb-4 placeholder-white"
+  [(ngModel)]="desc"
+  name="desc"
+  (ngModelChange)="handleChange()"
+></textarea>
+
+<p class="font-semibold text-white mt-1">Deadline</p>
+<input
+  type="date"
+  name="deadline"
+  class="p-4 rounded-md font-semibold bg-transparent text-white border-2 border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-300 w-full mb-4"
+  [(ngModel)]="deadline"
+  name="deadline"
+  (ngModelChange)="handleChange()"
+/>
+
+  <button
+    type="submit"
+    [disabled]="disable"
+    class="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 py-3 px-6 rounded-md text-white font-semibold shadow-lg transition-all duration-300 w-full mt-4"
+  >
+    Add Task
+  </button>
+</form>
